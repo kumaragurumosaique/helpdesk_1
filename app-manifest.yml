@@ -1,0 +1,34 @@
+display_information:
+  name: Helpdesk_slack
+  description: helpdesk-desk
+  background_color: "#2861d4"
+features:
+  app_home:
+    home_tab_enabled: true
+    messages_tab_enabled: true
+    messages_tab_read_only_enabled: false
+  bot_user:
+    display_name: Helpdesk Bot
+    always_online: true
+  shortcuts:
+    - name: Helpdesk
+      type: global
+      callback_id: helpdesk_slack
+      description: Helpdesk
+oauth_config:
+  scopes:
+    bot:
+      - chat:write
+      - chat:write.public
+      - im:write
+      - users:read
+      - incoming-webhook
+      - commands
+settings:
+  interactivity:
+    is_enabled: true
+    request_url: https://a2cd-106-51-87-81.ngrok-free.app/slack/events
+    message_menu_options_url: https://a2cd-106-51-87-81.ngrok-free.app/slack/events
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

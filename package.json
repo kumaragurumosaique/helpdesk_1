@@ -1,0 +1,38 @@
+{
+    "name": "Helpdesk_slack",
+    "version": "0.0.1",
+    "description": "helpdesk-desk",
+    "main": "index.js",
+    "scripts": {
+      "local": "npm run local",
+      "start": "node src/index.js"
+    },
+    "nodemonConfig": {
+      "ignore": [
+        "src/modals/*",
+        "src/initial.js",
+        "src/solution.js"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:seratch/bit-valley-2020-slack-bolt-app.git"
+    },
+    "keywords": [
+      "Slack",
+      "Bolt"
+    ],
+    "author": "@seratch",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/seratch/bit-valley-2020-slack-bolt-app/issues"
+    },
+    "homepage": "https://github.com/seratch/bit-valley-2020-slack-bolt-app#readme",
+    "dependencies": {
+      "@slack/bolt": "^3.4.0",
+      "dotenv": "^8.2.0"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.4"
+    }
+}
