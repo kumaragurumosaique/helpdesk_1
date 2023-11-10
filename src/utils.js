@@ -65,241 +65,590 @@ exports.sendNotification = async function (client, userIdOrChannelId, text) {
 
 exports.buildInitialModalView = function (callbackId) {
   return {
-    "type": "modal",
-    "callback_id": callbackId,
     "title": {
       "type": "plain_text",
-      "text": "ヘルプデスク申請"
+      "text": "Teams Bot",
+      "emoji": true
     },
+    "submit": {
+      "type": "plain_text",
+      "text": "Submit",
+      "emoji": true
+    },
+    "type": "modal",
     "close": {
       "type": "plain_text",
-      "text": "閉じる"
+      "text": "Cancel",
+      "emoji": true
     },
     "blocks": [
       {
         "type": "section",
         "text": {
-          "type": "mrkdwn",
-          "text": ":wave: 申請カテゴリを選んでください。"
+          "type": "plain_text",
+          "text": "承認一覧 : 6件",
+          "emoji": true
         }
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "出張仮払申請書"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム詳細*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": " "
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*現在のステップ*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "部長承認"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請者名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "寺崎啓一"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請日時*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "2023/11/02 22:36"
+          }
+        ]
       },
       {
         "type": "actions",
         "elements": [
           {
-            "type": "static_select",
-            "action_id": "helpdesk-request-modal-category-selection",
-            "options": [
-              {
-                "text": {
-                  "type": "plain_text",
-                  "text": "PC"
-                },
-                "value": "laptop"
-              },
-              {
-                "text": {
-                  "type": "plain_text",
-                  "text": "モバイル端末"
-                },
-                "value": "mobile"
-              },
-              {
-                "text": {
-                  "type": "plain_text",
-                  "text": "その他"
-                },
-                "value": "other"
-              }
-            ]
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "承認する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "却下する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "danger"
           }
         ]
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "稟議書"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム詳細*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "会計システム新バージョン開発に伴う外注費の伺い"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*現在のステップ*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "部長承認"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請者名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "榎本和代"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請日時*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "2016/10/13 12:37"
+          }
+        ]
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "承認する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "却下する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "danger"
+          }
+        ]
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "契約審査依頼書（初回)"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム詳細*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "株式会社MMCエージェント"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*現在のステップ*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "申請部署部長"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請者名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "岸本好"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請日時*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "2023/10/19 17:08"
+          }
+        ]
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "承認する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "却下する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "danger"
+          }
+        ]
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "稟議書"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム詳細*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "パソコン購入の件"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*現在のステップ*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "部長承認"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請者名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "岸本好"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請日時*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "2011/05/06 11:36"
+          }
+        ]
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "承認する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "却下する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "danger"
+          }
+        ]
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "稟議書"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム詳細*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "営業車両新規導入の件"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*現在のステップ*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "部長承認"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請者名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "角田淑子"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請日時*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "2011/05/06 11:34"
+          }
+        ]
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "承認する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "却下する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "danger"
+          }
+        ]
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "契約審査依頼書（初回)"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*フォーム詳細*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "ABC不動産販売"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*現在のステップ*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "申請部署部長"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請者名*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "北上歩"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*申請日時*"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "2011/04/27 15:25"
+          }
+        ]
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "承認する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "却下する",
+              "emoji": true
+            },
+            "value": "click_me_123",
+            "style": "danger"
+          }
+        ]
+      },
+      {
+        "type": "divider"
       }
     ]
   };
 }
 
-exports.buildSecondModalView = function (callbackId, blocks, privateMetadata) {
-  return {
-    "type": "modal",
-    "callback_id": callbackId,
-    "private_metadata": privateMetadata,
-    "title": {
-      "type": "plain_text",
-      "text": "ヘルプデスク申請"
-    },
-    "submit": {
-      "type": "plain_text",
-      "text": "送信"
-    },
-    "close": {
-      "type": "plain_text",
-      "text": "閉じる"
-    },
-    "blocks": blocks
-  };
-};
-
-class ModalViewBlocks {
-
-  static header(text) {
-    return {
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": text
-      },
-      "accessory": {
-        "type": "button",
-        "action_id": "helpdesk-request-modal-reset",
-        "text": {
-          "type": "plain_text",
-          "text": "カテゴリ選択に戻る"
-        },
-        "value": "1"
-      }
-    };
-  };
-
-  static title(initialValue) {
-    return {
-      "type": "input",
-      "block_id": "title",
-      "label": {
-        "type": "plain_text",
-        "text": "件名"
-      },
-      "element": {
-        "type": "plain_text_input",
-        "action_id": "element",
-        "initial_value": initialValue
-      }
-    };
-  };
-
-  static laptopModel() {
-    return {
-      "type": "input",
-      "block_id": "laptop-model",
-      "label": {
-        "type": "plain_text",
-        "text": "PC モデル"
-      },
-      "element": {
-        "type": "static_select",
-        "action_id": "element",
-        "options": [
-          {
-            "text": {
-              "type": "plain_text",
-              "text": "MacBook Pro (16-inch, 2019)"
-            },
-            "value": "MacBookPro16,1"
-          },
-          {
-            "text": {
-              "type": "plain_text",
-              "text": "MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)"
-            },
-            "value": "MacBookPro15,4"
-          },
-          {
-            "text": {
-              "type": "plain_text",
-              "text": "Surface Book 3 for Business"
-            },
-            "value": "SurfaceBook3"
-          }
-        ]
-      }
-    };
-  };
-
-  static mobileOS() {
-    return {
-      "type": "input",
-      "block_id": "os",
-      "label": {
-        "type": "plain_text",
-        "text": "モバイル端末の OS"
-      },
-      "element": {
-        "type": "static_select",
-        "action_id": "element",
-        "placeholder": {
-          "type": "plain_text",
-          "text": "選択してください"
-        },
-        "options": [
-          {
-            "text": {
-              "type": "plain_text",
-              "text": "iOS"
-            },
-            "value": "ios"
-          },
-          {
-            "text": {
-              "type": "plain_text",
-              "text": "Android"
-            },
-            "value": "android"
-          }
-        ]
-      }
-    };
-  };
-
-  static description() {
-    return {
-      "type": "input",
-      "block_id": "description",
-      "label": {
-        "type": "plain_text",
-        "text": "概要"
-      },
-      "element": {
-        "type": "plain_text_input",
-        "action_id": "element",
-        "multiline": true
-      }
-    };
-  }
-
-  static approver() {
-    return {
-      "type": "input",
-      "block_id": "approver",
-      "label": {
-        "type": "plain_text",
-        "text": "承認者"
-      },
-      "element": {
-        "type": "users_select",
-        "action_id": "element",
-        "placeholder": {
-          "type": "plain_text",
-          "text": "承認者を選択してください（通常は直属の上司です）"
-        }
-      }
-    };
-  };
-
-  static dueDate() {
-    return {
-      "type": "input",
-      "block_id": "due-date",
-      "element": {
-        "type": "datepicker",
-        "action_id": "element"
-      },
-      "label": {
-        "type": "plain_text",
-        "text": "希望納品日（ご要望に添えない場合があります）",
-        "emoji": true
-      }
-    };
-  }
-}
-
-exports.ModalViewBlocks = ModalViewBlocks;
